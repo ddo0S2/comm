@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">comm</string>
+    <string name="start">측정 시작</string>
+    <string name="capstone">2024-1 전자공학과 capstone</string>
 </resources>

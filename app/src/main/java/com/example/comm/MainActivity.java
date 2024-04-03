@@ -9,12 +9,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.os.SystemClock;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
     TextView mTvBluetoothStatus;
     TextView mTvReceiveData;
     TextView mTvSendData;
-    Button mBtnBluetoothOn;
-    Button mBtnBluetoothOff;
+    View mBtnBluetoothOn;
+    ImageView mBtnBluetoothOff;
     ImageButton mBtnConnect;
-    Button mBtnSendData;
+    View mBtnSendData;
 
     BluetoothAdapter mBluetoothAdapter;
     Set<BluetoothDevice> mPairedDevices;
@@ -63,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
 
         mTvBluetoothStatus = (TextView) findViewById(R.id.tvBluetoothStatus);
         mTvReceiveData = (TextView) findViewById(R.id.tvReceiveData);
-        mTvSendData = (EditText) findViewById(R.id.tvSendData);
-        mBtnBluetoothOn = (Button) findViewById(R.id.btnBluetoothOn);
-        mBtnBluetoothOff = (Button) findViewById(R.id.btnBluetoothOff);
+
+        mBtnBluetoothOn = (View) findViewById(R.id.bsllogo);
+        mBtnBluetoothOff = (ImageView) findViewById(R.id.kwlogo);
         mBtnConnect = (ImageButton) findViewById(R.id.btnConnect);
-        mBtnSendData = (Button) findViewById(R.id.btnSendData);
+        mBtnSendData = (android.view.View) findViewById(R.id.bottom);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mBluetoothHandler = new Handler() {
-            public void handleMessage(android.os.Message msg) {
+            public void handleMessage(Message msg) {
                 if (msg.what == BT_MESSAGE_READ) {
                     String readMessage = null;
                     try {
