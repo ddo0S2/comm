@@ -21,15 +21,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Comm"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
+
+        <activity android:name=".splash"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity">
+            <!-- FourSelectActivity가 앱 시작 시 처음에 실행되도록 함 -->
+        </activity>
+        <activity android:name=".fourselect">
+            <!-- FourSelectActivity가 앱 시작 시 처음에 실행되도록 함 -->
+        </activity>
+        <activity android:name=".purpose">
+            <!-- FourSelectActivity가 앱 시작 시 처음에 실행되도록 함 -->
+        </activity>
+        <activity android:name=".explanation">
+            <!-- FourSelectActivity가 앱 시작 시 처음에 실행되도록 함 -->
+        </activity>
+        <activity android:name=".home">
+            <!-- FourSelectActivity가 앱 시작 시 처음에 실행되도록 함 -->
+        </activity>
     </application>
+
 
 </manifest>
