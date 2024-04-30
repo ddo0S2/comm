@@ -71,7 +71,7 @@
         <View
             android:id="@+id/howtousebox"
             android:background="@drawable/howtousebox"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="70dp"
             android:layout_marginTop="155dp"
             android:layout_width="274dp"
             android:layout_height="60dp" />
@@ -82,7 +82,7 @@
             android:gravity="center"
             android:textSize="30sp"
             android:textColor="@color/black"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="115dp"
             android:layout_marginTop="160dp"
             android:layout_width="182dp"
             android:layout_height="49dp"

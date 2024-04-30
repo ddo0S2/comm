@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">comm</string>
-    <string name="start">측정 시작</string>
+    <string name="start">시작</string>
+    <string name="stop">중지</string>
     <string name="capstone">2024-1 전자공학과 capstone</string>
     <string name="capacitormain">CapstoneCapacitancevalue</string>
     <string name="purposeexplain">목적 설명 울라울랄ㄹㄹ</string>

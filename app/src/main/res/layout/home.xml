@@ -88,26 +88,27 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />
 
+        <ImageView
+            android:id="@+id/kwlogo"
+            android:src="@drawable/kwlogo"
+            android:contentDescription="kwlogo"
+            android:layout_marginStart="-4dp"
+            android:layout_marginTop="34dp"
+            android:layout_width="87.62dp"
+            android:layout_height="64dp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/bsllogo"
+            android:src="@drawable/bsllogo"
+            android:contentDescription="bsllogo"
+            android:layout_marginStart="74dp"
+            android:layout_marginTop="45dp"
+            android:layout_width="45dp"
+            android:layout_height="43.84dp"
+            tools:ignore="MissingConstraints" />
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/kwlogo"
-        android:src="@drawable/kwlogo"
-        android:contentDescription="kwlogo"
-        android:layout_marginStart="-4dp"
-        android:layout_marginTop="34dp"
-        android:layout_width="87.62dp"
-        android:layout_height="64dp"
-        tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/bsllogo"
-        android:src="@drawable/bsllogo"
-        android:contentDescription="bsllogo"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="45dp"
-        android:layout_width="45dp"
-        android:layout_height="43.84dp"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

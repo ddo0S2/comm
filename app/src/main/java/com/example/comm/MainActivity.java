@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     View mBtnBluetoothOn;
     ImageView mBtnBluetoothOff;
     ImageButton mBtnConnect;
+    ImageButton mBtnStart;
+    ImageButton mBtnStop;
     View mBtnSendData;
 
     BluetoothAdapter mBluetoothAdapter;
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     Handler mBluetoothHandler;
     ConnectedBluetoothThread mThreadConnectedBluetooth;
+
     BluetoothDevice mBluetoothDevice;
     BluetoothSocket mBluetoothSocket;
 
@@ -56,11 +59,14 @@ public class MainActivity extends AppCompatActivity {
     final static int BT_CONNECTING_STATUS = 3;
     final static UUID BT_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
+    private static String address = "64:03:7F:64:86:8A";
+
     @SuppressLint({"HandlerLeak", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         mTvBluetoothStatus = (TextView) findViewById(R.id.tvBluetoothStatus);
         mTvReceiveData = (TextView) findViewById(R.id.tvReceiveData);
@@ -68,10 +74,11 @@ public class MainActivity extends AppCompatActivity {
         mBtnBluetoothOn = (View) findViewById(R.id.bsllogo);
         mBtnBluetoothOff = (ImageView) findViewById(R.id.kwlogo);
         mBtnConnect = (ImageButton) findViewById(R.id.btnConnect);
+        mBtnStart = (ImageButton) findViewById(R.id.resultbox);
+        mBtnStop = (ImageButton) findViewById(R.id.box);
         mBtnSendData = (android.view.View) findViewById(R.id.bottom);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
 
         mBtnBluetoothOn.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -94,9 +101,28 @@ public class MainActivity extends AppCompatActivity {
         mBtnSendData.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mThreadConnectedBluetooth != null) {
+               /* if (mThreadConnectedBluetooth != null) {
                     mThreadConnectedBluetooth.write(mTvSendData.getText().toString());
                     mTvSendData.setText("");
+                }*/
+            }
+        });
+        mBtnStart.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mThreadConnectedBluetooth != null) {
+                    mThreadConnectedBluetooth.write("1");
+
+                }
+            }
+        });
+
+        mBtnStop.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mThreadConnectedBluetooth != null) {
+                    mThreadConnectedBluetooth.write("0");
+
                 }
             }
         });
@@ -114,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
+
 
     void bluetoothOn() {
         if (mBluetoothAdapter == null) {
