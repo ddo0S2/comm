@@ -12,7 +12,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -24,13 +23,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import java.io.CharArrayWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -43,10 +40,6 @@ public class MainActivity extends AppCompatActivity {
     View mBtnBluetoothOn;
     ImageView mBtnBluetoothOff;
     ImageButton mBtnConnect;
-
-    ImageButton btnstart;
-
-    ImageButton btnstop;
     View mBtnSendData;
 
     BluetoothAdapter mBluetoothAdapter;
@@ -63,43 +56,11 @@ public class MainActivity extends AppCompatActivity {
     final static int BT_CONNECTING_STATUS = 3;
     final static UUID BT_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
-    private static String address = "64:03:7F:64:86:8A";
-    private MainActivity mmOutStream;
-
     @SuppressLint({"HandlerLeak", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();       // get Bluetooth adapter
-        checkBTState();
-
-        btnstart = (ImageButton) findViewById(R.id.start);
-        btnstop = (ImageButton) findViewById(R.id.stop);
-        btnstart.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mThreadConnectedBluetooth != null) {
-                    mThreadConnectedBluetooth.write("1"); // "1" 전송
-                } else {
-                    Log.e("MainActivity", "mThreadConnectedBluetooth is null");
-                }
-            }
-        });
-
-        btnstop.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mThreadConnectedBluetooth != null) {
-                    mThreadConnectedBluetooth.write("0"); // "0" 전송
-                } else {
-                    Log.e("MainActivity", "mThreadConnectedBluetooth is null");
-                }
-            }
-        });
-
-
 
         mTvBluetoothStatus = (TextView) findViewById(R.id.tvBluetoothStatus);
         mTvReceiveData = (TextView) findViewById(R.id.tvReceiveData);
@@ -139,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         mBluetoothHandler = new Handler() {
             public void handleMessage(Message msg) {
                 if (msg.what == BT_MESSAGE_READ) {
@@ -153,15 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-    }
-
-    private void checkBTState() {
-    }
-
-    public void write(String str) {
-        byte[] bytes = str.getBytes();
-        mmOutStream.write(Arrays.toString(bytes));
-        Log.d("Bluetooth", "Data sent: " + str); // 데이터 전송 로그 추가
     }
 
     void bluetoothOn() {
@@ -361,6 +312,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "데이터 전송 중 오류가 발생했습니다.", Toast.LENGTH_LONG).show();
             }
         }
-
+        public void cancel() {
+            try {
+                mmSocket.close();
+            } catch (IOException e) {
+                Toast.makeText(getApplicationContext(), "소켓 해제 중 오류가 발생했습니다.", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
