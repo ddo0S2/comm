@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">comm</string>
     <string name="start">측정 시작</string>
-    <string name="capstone">2024-1 전자공학과 capstone</string>
-    <string name="capacitormain">CapstoneCapacitancevalue</string>
+    <string name="capstone">팀명</string>
+    <string name="capacitormain">Capstone Capacitance Measurement</string>
     <string name="purposeexplain">목적 설명 울라울랄ㄹㄹ</string>
     <string name="purpose">사용 목적</string>
     <string name="howtouse">사용 방법</string>
+    <string name="stop">중지</string>
+    <string name="unit">pF</string>
+    <string name="measurestart">시작</string>
     <string name="howtouseexplain">방법 설명 울ㄹㄹ랄라</string>
 </resources>

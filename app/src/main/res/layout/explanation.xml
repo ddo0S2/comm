@@ -20,22 +20,13 @@
             android:layout_marginRight="0dp"
             android:scaleType="fitXY" />
 
-
-        <ImageView android:id="@+id/kwlogo"
-            android:src="@drawable/kwlogo"
-            android:contentDescription="kwlogo"
-            android:layout_marginStart="-4dp"
-            android:layout_marginTop="34dp"
-            android:layout_width="87.62dp"
-            android:layout_height="64dp" />
-
-        <ImageView android:id="@+id/bsllogo"
-            android:src="@drawable/bsllogo"
-            android:contentDescription="bsllogo"
-            android:layout_marginStart="74dp"
-            android:layout_marginTop="45dp"
-            android:layout_width="45dp"
-            android:layout_height="43.84dp" />
+        <View
+            android:layout_width="400dp"
+            android:layout_height="124dp"
+            android:layout_marginTop="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rounded_corners" />
 
         <TextView
             android:id="@+id/_2024capstone"
@@ -70,7 +61,7 @@
         <View   android:id="@+id/howtousebox"
             android:background="@drawable/howtousebox"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="155dp"
+            android:layout_marginTop="200dp"
             android:layout_width="274dp"
             android:layout_height="60dp" />
 
@@ -80,7 +71,7 @@
             android:textSize="30sp"
             android:textColor="@color/black"
             android:layout_marginLeft="120dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="205dp"
             android:layout_width="182dp"
             android:layout_height="49dp"
             android:text="@string/howtouse"
@@ -97,7 +88,7 @@
         <TextView android:id="@+id/text"
             android:layout_gravity="center_horizontal|center"
             android:gravity="center"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textColor="@color/white"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="300dp"
@@ -106,6 +97,35 @@
             android:text="@string/howtouseexplain"
             />
 
+        <ImageView
+            android:id="@+id/kwlogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="kwlogo"
+            android:src="@drawable/kwlogo" />
+
+        <ImageView
+            android:id="@+id/bsllogo"
+            android:layout_width="243dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="35dp"
+            android:contentDescription="logo2"
+            android:src="@drawable/bsllogo" />
+
+        <TextView
+            android:id="@+id/capstonetext"
+            android:layout_width="183.2dp"
+            android:layout_height="23.2dp"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="130dp"
+            android:gravity="center"
+            android:text="@string/capstone"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
         <RelativeLayout
             android:id="@+id/group_2"
