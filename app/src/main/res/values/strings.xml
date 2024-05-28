@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">comm</string>
-    <string name="start">측정 시작</string>
-    <string name="capstone">팀명</string>
+    <string name="app_name">Capstone</string>
+    <string name="start">시작</string>
+    <string name="capstone">SKRR</string>
     <string name="capacitormain">Capstone Capacitance Measurement</string>
-    <string name="purposeexplain">목적 설명 울라울랄ㄹㄹ</string>
+    <string name="purposeexplain">Device의 Capacitance를 측정할 수 있는 어플리케이션 입니다. \nCapacitance의 값을 간편하고 빠르게 눈으로 확인하세요!</string>
     <string name="purpose">사용 목적</string>
     <string name="howtouse">사용 방법</string>
     <string name="stop">중지</string>
     <string name="unit">pF</string>
     <string name="measurestart">시작</string>
-    <string name="howtouseexplain">방법 설명 울ㄹㄹ랄라</string>
+    <string name="howtouseexplain">블루투스가 가능한 환경에서 측정을 원하는 Device와 FDC2114를 준비해주세요.\nWire을 이용해 측정하면 화면에 값이 바로 뜨게 됩니다!</string>
 </resources>

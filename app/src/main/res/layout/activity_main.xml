@@ -13,6 +13,14 @@
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="323dp">
 
+        <ImageView
+            android:id="@+id/background"
+            android:src="@drawable/background"
+            android:contentDescription="background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
         <TextView
             android:id="@+id/tvBluetoothStatus"
             android:layout_width="170dp"
@@ -24,38 +32,55 @@
             />
 
         <ImageButton
-            android:id="@+id/resultbox"
-            android:layout_width="274dp"
+            android:id="@+id/start"
+            android:layout_width="130dp"
             android:layout_height="60dp"
             android:layout_marginStart="65dp"
             android:layout_marginTop="720dp"
-            android:background="@drawable/resultbox" />
+            android:src="@drawable/resultbox" />
 
         <TextView
             android:id="@+id/resulttext"
-            android:layout_width="182dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="725dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="723dp"
             android:text="@string/start"
             android:textColor="@color/black"
             android:textSize="30sp" />
 
         <ImageButton
+            android:id="@+id/stop"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="720dp"
+            android:src="@drawable/resultbox" />
+        <TextView
+            android:id="@+id/boxtext"
+            android:layout_width="56dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="245dp"
+            android:layout_marginTop="723dp"
+            android:text="@string/stop"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageButton
             android:id="@+id/btnConnect"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="130dp"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="200dp"
             android:src="@drawable/resultbox" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/btnConnect"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="-63dp"
-            android:text="연결하기"
+            android:layout_marginLeft="190dp"
+            android:layout_marginTop="-50dp"
+            android:text="연결"
             android:textSize="30sp" />
 
         <View
@@ -63,17 +88,26 @@
             android:layout_width="302dp"
             android:layout_height="404dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="280dp"
             android:background="@drawable/capbox" />
 
         <ImageView
             android:id="@+id/free_icon_capacitor_4505420_1"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="300dp"
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="310dp"
             android:contentDescription="free_icon_capacitor_4505420_1"
             android:src="@drawable/free_icon_capacitor_4505420_1" />
+
+        <View
+            android:layout_width="400dp"
+            android:layout_height="124dp"
+            android:layout_marginTop="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rounded_corners" />
+
 
         <TextView
             android:id="@+id/tvReceiveData"
@@ -81,15 +115,27 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:layout_marginTop="370dp"
-            android:text="Receive"
-            android:textSize="35dp" />
+            android:text="Cap"
+            android:textStyle="bold"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="380dp"
+            android:text="pF"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="50sp" />
 
         <ImageView
             android:id="@+id/image_4"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="147dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="210dp"
             android:contentDescription="image_4"
             android:src="@drawable/image_4" />
 
@@ -109,53 +155,52 @@
             android:layout_marginTop="844dp"
             android:background="@drawable/top" />
 
-        <ImageView
-            android:id="@+id/free_icon_right_arrow_271228_1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="794dp"
-            android:contentDescription="free_icon_right_arrow_271228_1"
-            android:src="@drawable/back" />
+        <ImageButton
+            android:id="@+id/back3_button"
+            android:layout_marginTop="782dp"
+            android:layout_marginStart="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:background="@android:color/transparent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="TODO" />
 
-        <ImageView
-            android:id="@+id/free_icon_task_list_6800733_1"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="350dp"
-            android:layout_marginTop="794dp"
-            android:contentDescription="free_icon_task_list_6800733_1"
-            android:src="@drawable/list" />
-
-        <TextView
-            android:id="@+id/capstonetext"
-            android:layout_width="183.2dp"
-            android:layout_height="23.2dp"
-            android:layout_gravity="center_horizontal|center"
-            android:layout_marginLeft="220dp"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="@string/capstone"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
 
         <ImageView
             android:id="@+id/kwlogo"
-            android:layout_width="87.62dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="-4dp"
-            android:layout_marginTop="34dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="20dp"
             android:contentDescription="kwlogo"
             android:src="@drawable/kwlogo" />
 
+
+
         <ImageView
             android:id="@+id/bsllogo"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="74dp"
-            android:layout_marginTop="44dp"
+            android:layout_width="243dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="35dp"
             android:contentDescription="logo2"
             android:src="@drawable/bsllogo" />
+
+        <TextView
+            android:id="@+id/capstonetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="115dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="@string/capstone"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
 
 
     </RelativeLayout>

@@ -102,15 +102,17 @@
 
         <TextView
             android:id="@+id/capstonetext"
-            android:layout_width="183.2dp"
-            android:layout_height="23.2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="115dp"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="@string/capstone"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textSize="30sp" />
+
 
     </RelativeLayout>
 

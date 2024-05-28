@@ -68,13 +68,13 @@
         <TextView
             android:id="@+id/text"
             android:layout_gravity="center_horizontal|center"
-            android:gravity="center"
-            android:textSize="30sp"
+            android:gravity="start"
+            android:textSize="20sp"
             android:textColor="@color/white"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="300dp"
-            android:layout_width="288dp"
-            android:layout_height="309dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="350dp"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
             android:text="@string/purposeexplain" />
 
         <View
@@ -106,15 +106,17 @@
 
         <TextView
             android:id="@+id/capstonetext"
-            android:layout_width="183.2dp"
-            android:layout_height="23.2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="115dp"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="@string/capstone"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textSize="30sp" />
+
 
 
 
