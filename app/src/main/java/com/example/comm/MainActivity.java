@@ -91,25 +91,25 @@ public class MainActivity extends AppCompatActivity {
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
-        mBtnBluetoothOn.setOnClickListener(new Button.OnClickListener() {
+        mBtnBluetoothOn.setOnClickListener(new Button.OnClickListener() { //블루투스 켜기
             @Override
             public void onClick(View view) {
                 bluetoothOn();
             }
         });
-        mBtnBluetoothOff.setOnClickListener(new Button.OnClickListener() {
+        mBtnBluetoothOff.setOnClickListener(new Button.OnClickListener() { //블루투스 끄기
             @Override
             public void onClick(View view) {
                 bluetoothOff();
             }
         });
-        mBtnConnect.setOnClickListener(new Button.OnClickListener() {
+        mBtnConnect.setOnClickListener(new Button.OnClickListener() { //페어링된 장치 목록 띄우기
             @Override
             public void onClick(View view) {
                 listPairedDevices();
             }
         });
-        mBtnSendData.setOnClickListener(new Button.OnClickListener() {
+        mBtnSendData.setOnClickListener(new Button.OnClickListener() { //데이터 전송하는 코드(이번 프로젝트에서는 사용안함)
             @Override
             public void onClick(View view) {
                /* if (mThreadConnectedBluetooth != null) {
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 }*/
             }
         });
-        mBtnStart.setOnClickListener(new Button.OnClickListener() {
+        mBtnStart.setOnClickListener(new Button.OnClickListener() { //측정 시작(1을 보냄)
             @Override
             public void onClick(View view) {
                 if (mThreadConnectedBluetooth != null) {
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mBtnStop.setOnClickListener(new Button.OnClickListener() {
+        mBtnStop.setOnClickListener(new Button.OnClickListener() { //측정 중지(0을 보냄)
             @Override
             public void onClick(View view) {
                 if (mThreadConnectedBluetooth != null) {
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mBluetoothHandler = new Handler() {
-            public void handleMessage(Message msg) {
+            public void handleMessage(Message msg) { //블루투스 장치로부터 받은 메시지 처리, 수신된 데이터를 UI에 업데이트함.
                 if (msg.what == BT_MESSAGE_READ) {
                     String readMessage = null;
                     try {
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    void listPairedDevices() {
+    void listPairedDevices() { //페어링된 장치를 띄우는 함수
         if (mBluetoothAdapter.isEnabled()) {
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    void connectSelectedDevice(String selectedDeviceName) {
+    void connectSelectedDevice(String selectedDeviceName) { //선택된 장치와의 블루투스 연결 시도 함수
         for (BluetoothDevice tempDevice : mPairedDevices) {
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
@@ -310,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
         private final InputStream mmInStream;
         private final OutputStream mmOutStream;
 
-        public ConnectedBluetoothThread(BluetoothSocket socket) {
+        public ConnectedBluetoothThread(BluetoothSocket socket) { //블루투스 연결이 설정된 후 데이터 전송 및 수신을 처리하는 thread
             mmSocket = socket;
             InputStream tmpIn = null;
             OutputStream tmpOut = null;
